@@ -347,7 +347,7 @@ class caldav_calendar extends kolab_storage_dav_folder
                 foreach ($event['attendees'] as $attendee) {
                     if (
                         in_array($attendee['email'], $user_emails)
-                        && in_array($attendee['status'], $partstat_exclude)
+                        && in_array($attendee['status'] ?? '', $partstat_exclude)
                     ) {
                         return false;
                     }
